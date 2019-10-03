@@ -1,52 +1,63 @@
 #include <stdio.h>
 
-/*
-Problem 1: Printing the factorials of even and odd numbers separately from
-1 to 16
-*/
-
-unsigned long long int factorial(unsigned int x); //Function Prototype
+unsigned long long int factorial(unsigned int x);
+unsigned long long int factorialSolving(unsigned int y);
 
 int main()
 {
 
-    unsigned int evenCounter; // Variable that will work as a counter for even numbers
-    unsigned int oddCounter; // Variable that will work as a counter for odd numbers
+    unsigned int evenCounter = 0;
 
+    while(evenCounter <= 16){
 
-    puts("factorials of even numbers: ");
-    //Loop that will start at 0 until 16 and will print the factorial of even numbers
-    for(evenCounter = 0; evenCounter <= 16; evenCounter += 2)
-    {
-
-        printf("%u! = %llu\n", evenCounter, factorial(evenCounter) );
+        printf("%u! = %llu\n", evenCounter, factorial(evenCounter));
+        evenCounter += 2;
 
     }
+}
 
-    puts("\nfactorials of odd numbers: ");
+unsigned long long int factorialSolving(unsigned int y){
 
-    //Loop that will start at 1 until 15 and will print the factorial of odd numbers
-     for(oddCounter = 1; oddCounter <= 15; oddCounter += 2)
-    {
+if(y <= 1){
+    return 1;
 
-        printf("%u! = %llu\n", oddCounter, factorial(oddCounter) );
+} else {
+    return y * factorialSolving(y - 1);
+}
+
+
+}
+unsigned long long int factorial(unsigned int x){
+
+    switch(x){
+
+case 0:
+    return 1;
+    break;
+case 2:
+    return factorialSolving(x);
+    break;
+case 4:
+    return factorialSolving(x);
+    break;
+case 6:
+    return factorialSolving(x);
+    break;
+case 8:
+    return factorialSolving(x);
+    break;
+case 10:
+    return factorialSolving(x);
+    break;
+case 12:
+    return factorialSolving(x);
+    break;
+case 14:
+    return factorialSolving(x);
+    break;
+case 16:
+    return factorialSolving(x);
+    break;
 
     }
-
-}//End of main
-
-    unsigned long long int factorial(unsigned int x) //Definition of the function that will use recursion
-    {
-
-        if(x <= 1) //Base case that the function will use to guide itself
-        {
-            return 1;
-        }
-         else
-        {
-
-            return x * factorial(x - 1);//A function that will call itself to produce recursion
-        }
-    } //End of function definition
-
-
+}
