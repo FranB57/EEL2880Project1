@@ -1,63 +1,44 @@
 #include <stdio.h>
 
-unsigned long long int factorial(unsigned int x);
-unsigned long long int factorialSolving(unsigned int y);
+int squareFunction(int x); //function prototype
+int cubeFunction(int y); //function prototype
 
 int main()
 {
-
-    unsigned int evenCounter = 0;
-
-    while(evenCounter <= 16){
-
-        printf("%u! = %llu\n", evenCounter, factorial(evenCounter));
-        evenCounter += 2;
-
+    
+    int squareCounter = 16; //counter for loop of squareFunction
+    int cubeCounter = 16; // counter for loop of cubeFunction
+    
+    puts("Square of numbers from 16 to -16:");
+    //loop for squareFunction
+    while(squareCounter >= -16)
+    {
+        
+        printf("%d^2 = %d\n", squareCounter, squareFunction(squareCounter));
+        --squareCounter;
     }
-}
-
-unsigned long long int factorialSolving(unsigned int y){
-
-if(y <= 1){
-    return 1;
-
-} else {
-    return y * factorialSolving(y - 1);
-}
-
-
-}
-unsigned long long int factorial(unsigned int x){
-
-    switch(x){
-
-case 0:
-    return 1;
-    break;
-case 2:
-    return factorialSolving(x);
-    break;
-case 4:
-    return factorialSolving(x);
-    break;
-case 6:
-    return factorialSolving(x);
-    break;
-case 8:
-    return factorialSolving(x);
-    break;
-case 10:
-    return factorialSolving(x);
-    break;
-case 12:
-    return factorialSolving(x);
-    break;
-case 14:
-    return factorialSolving(x);
-    break;
-case 16:
-    return factorialSolving(x);
-    break;
-
+    
+    puts("\nCube of numbers from 16 to -16:");
+    //loop for cubeFunction
+    while(cubeCounter >= -16)
+    {
+        
+        printf("%d^3 = %d\n", cubeCounter, cubeFunction(cubeCounter));
+        --cubeCounter;
     }
+} //end main
+
+//function where x will be multiplied by x
+int squareFunction(int x)
+{
+    
+    return x = x * x;
 }
+
+//function where y will be multiplied by y * y
+int cubeFunction(int y)
+{
+    
+    return y = y * y * y;
+}
+
