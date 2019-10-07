@@ -47,6 +47,6 @@ int main()
 
             return x * factorial(x - 1);//A function that will call itself to produce recursion
         }
-    } //End of function definition
+    } //End of function definition.
 
 
