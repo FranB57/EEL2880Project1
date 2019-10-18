@@ -1,3 +1,2 @@
 # EEL2880Project1
-
-LOS BROSSSSSS
+A project for EEL2880 focusing on Chapters 1-6 of the book 
